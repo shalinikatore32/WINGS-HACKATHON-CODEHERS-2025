@@ -12,7 +12,7 @@ function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <NavLink to="/" className="text-2xl font-bold text-indigo-600">
-              <img src="/path/to/logo.png" alt="Logo" className="h-8" />
+              EventPrep
             </NavLink>
             <div className="hidden md:flex md:space-x-8 ml-10">
               <div className="relative flex items-center">
@@ -88,7 +88,7 @@ function Navbar() {
           <div className="flex items-center">
             <div className="hidden md:flex md:items-center md:space-x-4">
               <NavLink
-                to="/login"
+                to="/signin"
                 className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300"
               >
                 Log In
