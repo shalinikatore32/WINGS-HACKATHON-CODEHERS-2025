@@ -5,6 +5,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import { jwtDecode } from "jwt-decode";
 
+const BASE_URL = process.env.REACT_APP_API_URL;
+
 const SignInForm = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -28,7 +30,7 @@ const SignInForm = () => {
     try {
       console.log("Attempting to sign in with:", formData);
 
-      const response = await fetch("http://localhost:5000/api/signin", {
+      const response = await fetch(`${BASE_URL}/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,20 +66,19 @@ const SignInForm = () => {
       if (redirectPath) {
         localStorage.removeItem("redirectPath");
 
-        // Check if the redirect path is for event registration
+     
         if (
           redirectPath.startsWith("/events/") &&
           redirectPath.endsWith("/register")
         ) {
           const eventId = redirectPath.split("/")[2];
 
-          // Fetch registration status for the event
+  
           await fetchRegistrationStatus(eventId);
 
-          // Wait for a short delay to ensure registrationStatus is updated
+          
           await new Promise((resolve) => setTimeout(resolve, 100));
 
-          // Check if the user is already registered for this event
           const isRegistered = registrationStatus[eventId];
           if (isRegistered === true) {
             navigate(`/events/${eventId}`);

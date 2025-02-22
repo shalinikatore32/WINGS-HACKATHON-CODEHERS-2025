@@ -27,7 +27,7 @@ function Sidebar() {
   };
 
   const menuItems = [
-    { icon: <FaChartPie />, label: "Dashboard", path: "/dashboard" },
+    { icon: <FaChartPie />, label: "Dashboard", path: "/dashboard/mydashboard" },
     {
      icon:<FaRegRegistered/>, label:"Registered", path:"/dashboard/registered"
     },

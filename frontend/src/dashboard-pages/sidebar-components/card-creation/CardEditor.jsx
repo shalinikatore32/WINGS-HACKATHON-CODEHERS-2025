@@ -11,7 +11,7 @@ const CardEditor = () => {
   const [drawingTool, setDrawingTool] = useState("pencil");
   const [drawingColor, setDrawingColor] = useState("#000000");
   const [brushSize, setBrushSize] = useState(2);
-  const [selectedShape, setSelectedShape] = useState(null);
+ 
   const [shapeColor, setShapeColor] = useState("#000000");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
 

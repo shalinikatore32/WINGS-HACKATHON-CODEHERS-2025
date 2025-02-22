@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import { Link, useNavigate } from "react-router-dom";
 
-// Custom hook for typing effect
+const BASE_URL = process.env.REACT_APP_API_URL;
 function useTypingEffect(texts, typingSpeed = 100, pauseDuration = 2000) {
   const [displayText, setDisplayText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -67,7 +67,7 @@ function EventSignup() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/signup", {
+      const response = await fetch(`${BASE_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

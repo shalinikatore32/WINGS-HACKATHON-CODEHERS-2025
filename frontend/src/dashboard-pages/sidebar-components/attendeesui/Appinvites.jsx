@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const BASE_URL = process.env.REACT_APP_API_URL;
 
 function Appinvites() {
-  const { eventId } = useParams(); // Get event ID from URL params
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  const { eventId } = useParams(); 
+
   const [attendees, setAttendees] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
