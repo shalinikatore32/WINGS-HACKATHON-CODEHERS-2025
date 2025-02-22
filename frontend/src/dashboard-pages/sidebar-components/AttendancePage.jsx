@@ -5,8 +5,7 @@ const BASE_URL=process.env.REACT_APP_BASE_URL;
 const AttendancePage = () => {
   const [searchParams] = useSearchParams();
   
-  const eventId = searchParams.get("name");
-  const attendeeId = searchParams.get("email");
+
   const token = searchParams.get("token");
 
   const [location, setLocation] = useState({ latitude: null, longitude: null });
@@ -36,7 +35,7 @@ const AttendancePage = () => {
 
   const markAttendance = async () => {
     try {
-      const response = await fetch("http://localhost:5000/attendees/mark", {
+      const response = await fetch(`${BASE_URL}/attendees/mark`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -63,7 +62,7 @@ const AttendancePage = () => {
   const submitFeedback = async () => {
     
     try {
-      const response = await fetch("http://localhost:5000/feedback/submit", {
+      const response = await fetch(`${BASE_URL}/feedback/submit`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
