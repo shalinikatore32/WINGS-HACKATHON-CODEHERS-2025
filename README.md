@@ -4,11 +4,15 @@
 
 1. Clone the repository:
    ```
-   git clone https://github.com/shalinikatore32/REPOSITORY_NAME.git
+   git clone https://github.com/shalinikatore32/WINGS-HACKATHON-CODEHERS-2025.git
    ```
 2. Install the dependencies:
    ```
-   cd REPOSITORY_NAME
+   cd WINGS-HACKATHON-CODEHERS-2025
+   cd frontend
+   npm install
+
+   cd backend
    npm install
    ```
 3. Create a `.env` file in the root directory and add the following environment variables:
